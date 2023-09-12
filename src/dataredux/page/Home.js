@@ -7,7 +7,7 @@ import { getPosts } from "../store/post/actions";
 export default function Home() {
 
     const { posts, loadingPosts } = useSelector((state) => state.PostReducer);
-console.log(posts);
+console.log("sselect datatatat",posts);
   let dispatch = useDispatch();
 
   useEffect(() => {

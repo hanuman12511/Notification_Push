@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //apply base url for axios
-const REACT_APP_APP_URL = process.env.REACT_APP_APP_URL;
+const REACT_APP_APP_URL = "http://ankursingh.xyz/api/";
 
 const axiosApi = axios.create({
   baseURL: REACT_APP_APP_URL,
@@ -17,9 +17,10 @@ axiosApi.interceptors.response.use(
 );
 
 export async function get(url, config) {
-  return await axiosApi
+  const res = await axiosApi
     .get(url, {
       ...config,
     })
-    .then((response) => response.data);
+    .then((response) => response.data).catch((er)=>console.log('Error=',er))
+    return res
 }

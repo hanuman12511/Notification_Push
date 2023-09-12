@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import { Button, View ,Alert} from 'react-native';
+import { Button, View ,Alert,Text} from 'react-native';
 import messaging from '@react-native-firebase/messaging';
 
 import 'react-native-gesture-handler';
@@ -38,7 +38,7 @@ function NotificationsScreen({ navigation }) {
 
 const Drawer = createDrawerNavigator();
 function App(): JSX.Element {
-  React.useEffect(()=>{
+ /*  React.useEffect(()=>{
 
    
     
@@ -55,7 +55,7 @@ function App(): JSX.Element {
     requestUserPermission()
     getFcmToken()
    
-  },[])
+  },[]) */
  
 async function getFcmToken(){
   messaging().setBackgroundMessageHandler(async remoteMessage => {
@@ -124,17 +124,23 @@ function NotificationsScreen(){
   
 }
   return (
-    <Provider store={store}>
+    
     <NavigationContainer>
+      
+      <Provider store={store}>
+     
+     
 
-    <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-    </Drawer.Navigator>
+     <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Screen name="Home" component={Home} />
+     {/*  <Drawer.Screen name="Notifications" component={NotificationsScreen} /> */}
+    </Drawer.Navigator> 
+    </Provider> 
   </NavigationContainer>
-  </Provider>
+  
    
   );
 }
 
+export default App
 
