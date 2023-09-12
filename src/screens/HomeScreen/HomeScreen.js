@@ -2,9 +2,9 @@ import React from 'react'
 import {Text} from 'react-native'
 import { useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { getPosts ,getLogin} from "../store/post/actions";
+import { getPosts ,getLogin} from "../../WebApiService/store/post/actions";
 
-export default function Home() {
+export default function HomeScreen() {
 
     const {Reducer} = useSelector((state) => state);
 console.log("sselect datatatat home screen>>>>",Reducer);
