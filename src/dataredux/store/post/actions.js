@@ -5,16 +5,23 @@ import {
     GET_POST_DETAILS,
     GET_POST_DETAILS_SUCCESS,
     GET_POST_DETAILS_FAIL,
+
+    GET_LOGIN,
+    GET_LOGIN_SUCCESS,
+    GET_LOGIN_FAIL,
   } from "./actionTypes";
   
   export const getPosts = () => {
-    console.log("actions");
+    console.log(" post actions");
     return {
       type: GET_POSTS,
     };
   };
   
   export const getPostsSuccess = (posts) => {
+    console.log('====================================');
+    console.log("posts=>>>getpostsuccess",posts);
+    console.log('====================================');
     return {
       type: GET_POSTS_SUCCESS,
       payload: posts,
@@ -27,6 +34,36 @@ import {
       payload: error,
     };
   };
+
+
+  export const getLogin = (params) => {
+    console.log("login actions",params);
+    return {
+      type: GET_LOGIN,
+      payload:params
+    };
+  };
+  
+  export const getLoginSuccess = (posts) => {
+    console.log('====================================');
+    console.log("posts=>>>getloginsuccess",posts);
+    console.log('====================================');
+    return {
+      type: GET_LOGIN_SUCCESS,
+      payload: posts,
+    };
+  };
+  
+  export const getLoginFail = (error) => {
+    return {
+      type: GET_LOGIN_FAIL,
+      payload: error,
+    };
+  };
+  
+
+
+
   
   export const getPostDetails = (id) => {
     return {

@@ -17,10 +17,16 @@ axiosApi.interceptors.response.use(
 );
 
 export async function get(url, config) {
+  console.log('====================================',url);
+  console.log(config);
+  console.log('====================================');
   const res = await axiosApi
     .get(url, {
       ...config,
     })
-    .then((response) => response.data).catch((er)=>console.log('Error=',er))
+    .then((response) => response.data).catch((er)=>console.log('Error api eexcuteee=',er))
+    console.log('====================================');
+    console.log("api_helper>>>res>>>>",res);
+    console.log('====================================');
     return res
 }

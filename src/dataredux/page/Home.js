@@ -2,16 +2,30 @@ import React from 'react'
 import {Text} from 'react-native'
 import { useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { getPosts } from "../store/post/actions";
+import { getPosts ,getLogin} from "../store/post/actions";
 
 export default function Home() {
 
-    const { posts, loadingPosts } = useSelector((state) => state.PostReducer);
-console.log("sselect datatatat",posts);
-  let dispatch = useDispatch();
+    const {Reducer} = useSelector((state) => state);
+console.log("sselect datatatat home screen>>>>",Reducer);
+const {Home,Login}=Reducer
+console.log('====================================');
+console.log(Home);
+console.log('====================================');
+
+console.log('====================================');
+console.log(Login);
+console.log('====================================');
+
+let dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPosts());
+    let params={
+      "email":"hanu@gmail.com",
+      "pass":"12345",
+}
+  dispatch(getPosts()); 
+    dispatch(getLogin(params));
   }, []);
 
   return (

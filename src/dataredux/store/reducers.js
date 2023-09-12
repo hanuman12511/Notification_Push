@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 
-import PostReducer from "./post/reducer";
+import Reducer from "./post/reducers";
 console.log("reducer-dout");
 const rootReducer = combineReducers({
-  PostReducer,
+  Reducer
 });
 
 export default rootReducer;

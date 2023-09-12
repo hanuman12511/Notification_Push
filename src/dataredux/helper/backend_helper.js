@@ -12,3 +12,9 @@ export const getPostDetails = (id) =>
       id: id,
     },
   });
+
+export const getLogin = (params) =>
+
+  get(url.GET_LOGIN, {
+    params
+  });
