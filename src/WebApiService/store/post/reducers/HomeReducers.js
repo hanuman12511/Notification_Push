@@ -3,12 +3,7 @@ import {
     GET_POSTS,
     GET_POSTS_SUCCESS,
     GET_POSTS_FAIL,
-    GET_POST_DETAILS,
-    GET_POST_DETAILS_SUCCESS,
-    GET_POST_DETAILS_FAIL,
-    GET_LOGIN,
-    GET_LOGIN_SUCCESS,
-    GET_LOGIN_FAIL,
+    
   } from "../actionTypes";
   
   const initialState = {
@@ -45,42 +40,7 @@ import {
         break;
 
 
-        case GET_LOGIN:
-        
-        state = { ...state, loadingPosts: true };
-        
-        break;
-      case GET_LOGIN_SUCCESS:
-        state = { ...state, posts: action.payload, loadingPosts: false };
-        break;
-      case GET_LOGIN_FAIL:
-        state = {
-          ...state,
-          error: {
-            message: "Error",
-          },
-          loadingPosts: false,
-        };
-        break;
       
-      
-      
-      
-        case GET_POST_DETAILS:
-        state = { ...state, loadingPostDetails: true };
-        break;
-      case GET_POST_DETAILS_SUCCESS:
-        state = { ...state, post: action.payload[0], loadingPostDetails: false };
-        break;
-      case GET_POST_DETAILS_FAIL:
-        state = {
-          ...state,
-          error: {
-            message: "Error",
-          },
-          loadingPostDetails: false,
-        };
-        break;
       default:
         state = { ...state };
         break;

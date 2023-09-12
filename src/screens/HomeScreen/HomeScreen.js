@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import {Text} from 'react-native'
 import { useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { getPosts ,getLogin} from "../../WebApiService/store/post/actions";
 
+
 export default function HomeScreen() {
 
-    const {Reducer} = useSelector((state) => state);
-console.log("sselect datatatat home screen>>>>",Reducer);
-const {Home,Login}=Reducer
-console.log('====================================');
-console.log(Home);
-console.log('====================================');
-
-console.log('====================================');
-console.log(Login);
-console.log('====================================');
+     const {Home,Login}= useSelector((state) => state.Reducer);
+    console.log('============ Reducers Home Screen========================');
+    console.log('====================================');
+    console.log(Home);
+    console.log('====================================');
+   
+    console.log('====================================');
+    console.log(Login);
+    console.log('====================================');
+   
+    console.log('====================================');
 
 let dispatch = useDispatch();
 
