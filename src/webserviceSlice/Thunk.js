@@ -13,3 +13,15 @@ export const getLoginThunk = createAsyncThunk(
       return res.data;
     },
   );
+
+
+
+
+export const getHomeThunk = createAsyncThunk(
+    'getHomeThunk',
+    async (params) => {
+      const res = await axios.get("http://ankursingh.xyz/api/productshow.php",params);
+
+      return res.data;
+    },
+  );
