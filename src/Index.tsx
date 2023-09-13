@@ -10,8 +10,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import {PermissionsAndroid} from 'react-native';
 import {Provider} from 'react-redux'
-import store from './WebApiService/store'
+/* import store from './WebApiService/store' */
+import store from './webserviceSlice/store'
+
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
+import Home from './screens/HomeScreen/Home';
   PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
 /* function HomeScreen({ navigation }) {
   return (
@@ -132,7 +135,7 @@ function NotificationsScreen(){
      
 
      <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="home" component={Home} />
      {/*  <Drawer.Screen name="Notifications" component={NotificationsScreen} /> */}
     </Drawer.Navigator> 
     </Provider> 
