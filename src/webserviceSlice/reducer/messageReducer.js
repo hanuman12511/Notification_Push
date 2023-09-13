@@ -14,7 +14,7 @@ const messageSlice = createSlice({
       console.log('====================================');
       console.log("reducers==",state,action);
       console.log('====================================');
-      state.login = "data"
+      state.login = action.payload
     }
   },
   extraReducers: {
